@@ -27,7 +27,7 @@ export default function Partners() {
               <img
                 src="/assets/logo_icdi.png"
                 alt="Instituto de Capacitação, Desenvolvimento e Inovação - ICDI"
-                className="h-32 md:h-72 object-contain transition-transform duration-300 hover:scale-105"
+                className="h-32 md:h-96 object-contain transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
             </motion.div>
@@ -40,7 +40,7 @@ export default function Partners() {
               <img
                 src="/assets/logo_gdf.png"
                 alt="Governo do Distrito Federal"
-                className="h-28 md:h-60 object-contain transition-transform duration-300 hover:scale-105"
+                className="h-28 md:h-80 object-contain transition-transform duration-300 hover:scale-105"
                 loading="lazy"
               />
             </motion.div>
