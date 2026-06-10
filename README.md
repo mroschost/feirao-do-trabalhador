@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Feirão do Trabalhador - 2ª Edição
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page do **Feirão do Trabalhador**, evento promovido pelo **ICDI** com apoio do **GDF**.  
+15 a 19 de junho de 2026, das 8h às 19h, em frente ao Museu Nacional - Brasília.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Vite** + **React 19** + **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** (animações)
+- **Lucide React** (ícones)
+- **React Helmet Async** (meta tags)
 
-## React Compiler
+## Branches
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Branch | Conteúdo |
+|--------|----------|
+| `source` | Código fonte completo do projeto (React + Vite) |
+| `main` | Build de produção (HTML, JS, CSS, assets) - pronto para deploy |
 
-## Expanding the ESLint configuration
+## Desenvolvimento local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Instalar dependências
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Iniciar servidor de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build de produção
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+A saída vai para a pasta `dist/`.
+
+## Deploy na Hostinger
+
+Na pasta `public_html` do servidor:
+
+```bash
+git init
+git remote add origin https://github.com/mroschost/feirao-do-trabalhador.git
+git pull origin main
+```
+
+## Fluxo de trabalho
+
+1. Desenvolva na branch `source`
+2. Commit + push para `source`
+3. Execute `npm run build`
+4. Atualize a branch `main` com o conteúdo de `dist/`
+5. Na Hostinger, execute `git pull origin main` dentro da `public_html`
