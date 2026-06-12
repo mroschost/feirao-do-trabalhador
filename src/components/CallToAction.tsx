@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
-import { Button } from './ui/button'
-import { Calendar, MapPin, ArrowRight } from 'lucide-react'
+import { Calendar, MapPin } from 'lucide-react'
 
 export default function CallToAction() {
   return (
@@ -49,13 +48,7 @@ export default function CallToAction() {
             </span>
           </div>
 
-          <Button
-            className="bg-[#F3E844] text-[#2D3966] font-bold text-lg px-10 py-7 hover:scale-105 transition-transform"
-            style={{ fontFamily: 'Poppins, sans-serif' }}
-          >
-            FAZER INSCRI&Ccedil;&Atilde;O GRATUITA
-            <ArrowRight className="ml-2" size={22} />
-          </Button>
+
         </motion.div>
       </div>
     </section>
